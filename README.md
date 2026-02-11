@@ -1,73 +1,44 @@
-# React + TypeScript + Vite
+# 🛒 Modern React E-Commerce Cart
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully functional shopping cart application built to demonstrate modern web development practices. This project fetches real product data from an external API and allows users to browse products, manage their cart, and see dynamic pricing updates in real-time.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
+* **Framework:** React (Vite)
+* **Language:** TypeScript (for type safety)
+* **Styling:** Tailwind CSS (Responsive Grid & Flexbox)
+* **API:** FakeStoreAPI
+* **Icons:** Lucide-React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Key Features
+* **Dynamic Product Feed:** Asynchronously fetches product data using `useEffect` and `fetch`.
+* **Smart Cart Logic:** * Add items (prevents duplicates, increments quantity).
+    * Remove items (filters state array).
+    * Real-time total price calculation using `.reduce()`.
+* **Responsive Layout:** * **Desktop:** 3-column product grid with a sticky sidebar cart.
+    * **Mobile:** Stacked layout for easy scrolling.
+* **Type Safety:** Custom Interfaces for `Product` and `CartItem` to prevent runtime errors.
 
-## React Compiler
+## 🛠️ How to Run Locally
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1.  Clone the repository:
+    ```bash
+    git clone [https://github.com/YOUR_USERNAME/my-eshop.git](https://github.com/YOUR_USERNAME/my-eshop.git)
+    ```
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
 
-## Expanding the ESLint configuration
+## 📸 Screenshots
+<img width="1111" height="964" alt="Capture" src="https://github.com/user-attachments/assets/0b2cf942-d230-4eed-9a64-165732a31221" />
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 💡 What I Learned
+Building this project helped me master:
+* React Hooks (`useState`, `useEffect`).
+* Passing functions as props between Parent and Child components.
+* The importance of Immutability when updating state arrays.
+* Structuring a scalable React project with separate components.
